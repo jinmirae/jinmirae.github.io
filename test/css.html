@@ -21,9 +21,9 @@
        가상요소(Element-가상태그): :hover 사용예 a:hover
     */
     h1 { background-color: skyblue;}
-    div * {
+    /* div * {
         color: green;
-    }
+    } */
     .box-one, .box-two { background-color: tomato;}
     #box-four, #box-five { background-color: yellow;}
     .box-one p:after { content: ' +addadd'; }
@@ -58,9 +58,10 @@
             margin: 0px auto;/* 0 상하, auto 좌우 */
             margin: 0px;
             position: fixed;
-            /* 자리가 다른 태그와 관련없는 위치 */
+            /* 자리가 다른 태그와 관련없는 위치가짐 */
             margin-top: 20px;
             margin-left: 20px;
+            /* position: relative; */
         }
         .box-two {
             width: 200px;
@@ -75,7 +76,7 @@
 
 <body>
     <h1>헬로CSS</h1>
-    <div class="box-one"><p style="color: white;"><a href=""></a>상단으로 이동</p></div>
+    <div class="box-one"><p style="color: white;"><a href="#">상단으로 이동</a></p></div>
     <div class="box-two"><a href="">two two two</a></div>
     <div class="box-three">three</div>
     <div id="box-four">four</div>
