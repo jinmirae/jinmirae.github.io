@@ -1,7 +1,15 @@
+#### 20210512(수) 작업내역
+-git clone 으로 프로젝트를 가져온 경우 아래 내용을 추가해 주셔야합니다.
+-git config --list 확인에서 user.name, user.email 
+-터미널에서 아래 2가지 실행
+-git config --local user.name 영문이름
+-git config --local user.email 영문이메일
+-프로젝트를 1명이 제작하는 경우가 없기 때문에, 2명일때 소스 수정한 사람 확인용 정보보기
+
 #### 20210511(화) 작업내역
- -로렘 입숨
- -로렘 입숨
- -URL경로(path)
+ -로렘 입숨 한글URL:
+ -로렘 입숨 영어URL:
+ -URL경로(path)://test/htmls.html
  -html5의 레이아웃 구조 제작합니다.
  - 서버(응답하는프로그램=response) = 아파치서버, 톰캣서버
  - 클라이언트(요청하는프로그램request) = 웹브라우저
