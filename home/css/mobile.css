@@ -110,7 +110,7 @@ header { /* 태그선택자 */
 	width: 100%;
 	background: #31353d;
 	margin-top: 36px;
-	display: none;
+	/* display: none; */
 }
 .closePop {
 	display: block;
@@ -223,7 +223,7 @@ ul.viewImgList li {
 li.imglist0 {
 	position: relative;
 	z-index: 50;
-	background: url(./img/slide1.jpg) no-repeat;
+	background: url(../img/slide1.jpg) no-repeat;
 }
 li.imglist1 {
 	position: absolute;
