@@ -58,7 +58,7 @@ header { /* 태그선택자 */
 
 /* // 헤더영역 */
 
-/* 로고영영 */
+/* 로고영역 */
 .header_area h1 {
 	float: none;
 	width: 100%;
@@ -78,7 +78,7 @@ header { /* 태그선택자 */
 	overflow: hidden;
 }
 
-/* //로고영영 */
+/* //로고영역 */
 
 /* 상단 메뉴영역 */
 .openMOgnb {
