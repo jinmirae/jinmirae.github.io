@@ -112,7 +112,7 @@ header { /* 태그선택자 */
 	width: 100%;
 	background: #31353d;
 	margin-top: 36px;
-	/* display: none; */
+	display: none;
 }
 .closePop {
 	display: block;
