@@ -218,12 +218,12 @@ ul.viewImgList li {
 	background-size: cover;/* 배경 이미지의 크기를 꽉 채우는 값 cover */
 	width: 100%;
 
-}
+} 
 .roll_content a img {
 	display: none;
 }
 li.imglist0 {
-	position: relative;
+	position: relative; /* 기준위치 */
 	z-index: 50;
 	background: url(../img/slide1.jpg) no-repeat;
 }
@@ -232,7 +232,7 @@ li.imglist1 {
 	z-index: 10;
 	left: 0;
 	top: 0;
-	background: url(../img/slide1.jpg) no-repeat;
+	background: url(../img/slide2.jpg) no-repeat;
 
 }
 li.imglist2 {
@@ -240,7 +240,7 @@ li.imglist2 {
 	z-index: 10;
 	left: 0;
 	top: 0;
-	background: url(../img/slide1.jpg) no-repeat;
+	background: url(../img/slide3.jpg) no-repeat;
 
 }
 .roll_content {
