@@ -107,7 +107,7 @@ input::placeholder {
     border-bottom: 1px solid #ccc;
 }
 .bbsListTbl td:nth-child(2) { text-align: left;}
-.bbsListTbl th, .bbsListTbltd {
+.bbsListTbl th, .bbsListTbl td {
     padding: 10px;
     box-sizing: border-box;
     height: 45px;
@@ -167,7 +167,6 @@ input::placeholder {
 /* //게시판리스트 영역 */
 /* 여기까지가 모바일용 이후 태블릿용 스타일지정 시작 */
 /* 테블릿용 메인페이지 스타일 지정(아래) 801px~무한대까지 재정의*/ 
-@media all and (min-width:801px) {
 	/* 테블릿 + PC용 스타일 */
     .bbsListTbl th:nth-child(1) {
         display: table-cell;
@@ -202,4 +201,69 @@ input::placeholder {
     width: inherit;
     }
     /* //테블릿 + PC용 스타일 */
+
+    /* 게시판 글보기 영역 */
+.bbsview_list {
+    padding-bottom: 30px;
+    border-top: 2px solid #384d75;
+    text-align: left;
+}
+.bbsview_list li {
+    box-sizing: border-box;
+    padding: 0px 15px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.bbsview_list .bbs_title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.bbsview_list .bbs_hit {
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    width: 50%;
+}
+.bbsview_list .bbs_date {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 50%;
+}
+.bbs_content {
+    clear: both;/* float:left,right 기능을 해제합니다. */
+    min-height: 200px;/* 내용이 비었더라도 최소 높이 200px 자리를 차지합니다. 단, 내용이 많으면 200이상으로 자리를 차지합니다. */
+    padding: 20px 15px !important;
+}
+.btn_bbs {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    font-style: 14px;
+    line-height: 35px;
+    background: #384d75;
+    color: #fff !important;
+    text-align: center;
+}
+/* //게시판 글보기 영역 */
+
+/* PC용 메인페이지 스타일 지정 1066px~무한대까지 재정의 */
+@media all and (min-width:801px) {
+    /* 뷰페이지 버튼 스타일 */
+    .btn_bbs {
+        width: 70px;
+        float: none;
+        text-align: center;
+    }
+    /* //뷰페이지 버튼 스타일 */
 }
