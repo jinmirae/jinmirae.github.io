@@ -168,7 +168,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <!-- 첨부파일을 전송할때 enctype-필수 없으면, 첨부파일이 정송X -->
+          <!-- 첨부파일을 전송할때 enctype=필수 없으면, 첨부파일이 전송X -->
           <form name="form_view" action="board_write.html" enctype="multipart/form-data">
             <div class="card-body">
               <div class="form-group">
@@ -180,13 +180,13 @@
                 <label for="exampleInputPassword1">Password</label>
                 <br>
                 {변수출력}
-                </div>
+              </div>
               <div class="form-group">
                 <label for="exampleInputFile">File input</label>
                 <div class="input-group">
                   <div class="custom-file">
                     {첨부파일다운로드}
-                  </div>  
+                  </div>
                 </div>
               </div>
             </div>
@@ -306,6 +306,7 @@
           <!-- END timeline item -->
         </div>
         <!-- //댓글 타임라인 -->
+
         <!-- //콘텐츠 내용 -->
       </div><!-- /.container-fluid -->
     </section>
@@ -354,12 +355,12 @@ var printReplyList = function(data, templateData, target) {
   //result json데이터를 templateData에 파싱(아래)
   var template = Handlebars.compile(templateData.html());//템플릿을 태그로 변환
 	var html = template(data);//파싱처리
-	$('.div_template').remove();//기존 댓글데이터 누적을 방지 target안쪽의 자식만지움.
+	$('.div_template').remove();//기존 댓글데이터 누적을 방지 target안쪽의 자식만지움
 	target.prepend(html);
 };
 var printPagingList = function(pageVO, target) {
-  //스프링RestAPI서버에서 받은 pageVO 오브 target에 파싱합니다.(아래)
-  $(target).html('');// target 의 내용만 지우고, target은 남아있음.
+  //스프링RestAPI서버에서 받은 pageVO 오브젝트 target에 파싱합니다(아래)
+  $(target).html('');// tartget 의 내용만 지우고, target은 남아있음.
 //pageVO = 스프링에서 받은 json데이터, 변수3개 pageVO.prev(이전데이터가 있다면 true), pageVO.next(다음데이터 있다면 true), pageVO=5페이지로 가정
 	var pagination = '';//문자열 누적변수
 	//Previous 출력(아래)
@@ -370,7 +371,7 @@ var printPagingList = function(pageVO, target) {
 	for(var i=0; i<pageVO; i++) {
 		if(i==0) { active = 'active'; } else { active = ''; }
 		pagination += '<li class="paginate_button page-item '+active+'">';
-		pagination += '<a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">'+(i+1)+'</a>'
+		pagination += '<a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">'+(i+1)+'</a>';
 		pagination += '</li>';
 	}
 	//Next 출력(아래)
@@ -379,48 +380,49 @@ var printPagingList = function(pageVO, target) {
 	pagination += '</li>';
 	$(target).append(pagination);
 };
-  // 댓글리스트+댓글등록 버튼 클릭액션으로 댓글 리스트를 출력
-  $(document).ready(function() {
-    $('#btn_reply_write').click(function(){
-      $.ajax({
-        method:'get',
-        url:'board_view.html',
-        dataType:'text',
-        success:function(result) {
-          // alert('RestApi성공');
-          result = [
+// 댓글리스트+댓글등록 버튼 클릭액션으로 댓글 리스트를 출력
+$(document).ready(function(){
+  $('#btn_reply_write').click(function(){
+    $.ajax({
+      method:'get',
+      url:'board_view.html',
+      dataType:'text',
+      success:function(result) {
+        // alert('RestApi성공');
+        result = [
             {rno:3,bno:2,reply_text:'세번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345},
             {rno:2,bno:2,reply_text:'두번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345},
 						{rno:1,bno:2,reply_text:'첫번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345}
-          ];
-          printReplyList(result,$('#template'),$('#collapseReply'));
-          printPagingList(6, '.pagination');
-        },
-        error:function() {
-          alert('RestApi서버가 작동하지 않습니다.')
-        }
-      });
-    });
-    $('#btn_reply_list').click(function(){
-      $.ajax({
-        method:'get',
-        url:'board_view.html',
-        dataType:'text',
-        success:function(result) {
-          // alert('RestApi성공');
-          result = [
-            {rno:2,bno:2,reply_text:'두번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345},
-						{rno:1,bno:2,reply_text:'첫번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345}
-          ];
-          printReplyList(result,$('#template'),$('#collapseReply'));
-          printPagingList(5, '.pagination');
-        },
-        error:function() {
-          alert('RestApi서버가 작동하지 않습니다.')
-        }
-      });
+					];
+        printReplyList(result,$('#template'),$('#collapseReply'));
+        printPagingList(6, '.pagination');
+      },
+      error:function() {
+        alert('RestApi서버가 작동하지 않습니다.');
+      }
     });
   });
+  $('#btn_reply_list').click(function(){
+    $.ajax({
+      method:'get',
+      url:'board_view.html',
+      dataType:'text',
+      success:function(result) {
+        // alert('RestApi성공');
+        result = [
+						{rno:2,bno:2,reply_text:'두번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345},
+						{rno:1,bno:2,reply_text:'첫번째 댓글입니다.',replyer:'관리자',reg_date:1601234512345}
+					];
+        printReplyList(result,$('#template'),$('#collapseReply'));
+        printPagingList(5, '.pagination');
+      },
+      error:function() {
+        alert('RestApi서버가 작동하지 않습니다.');
+      }
+    });
+  });
+});
 </script>
+
 </body>
 </html>
