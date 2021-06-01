@@ -171,6 +171,7 @@
 		.bbs_line { /* 최신공지사항영역 */
 			float: right;
 			width: 29%;/* 나머지 35%중 29%영역지정 */
+			border-top: none;
 			padding: inherit;
 		}
 		.bbs_line h3 {
